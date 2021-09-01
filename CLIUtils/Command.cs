@@ -6,9 +6,10 @@ namespace CLIUtils
     {
         public string Name { get; set; }
         public string Description { get; set; }
-        public Action Action { get; set; }
+        public string[] Arguments { get; set; }
+        public Action<string[]> Action { get; set; }
 
-        public Command(string name, string description, Action action)
+        public Command(string name, string description, Action<string[]> action)
         {
             this.Name = name;
             this.Description = description;
@@ -17,7 +18,7 @@ namespace CLIUtils
 
         public void ExecuteAction()
         {
-            this.Action();
+            this.Action(this.Arguments);
         }
     }
 }

@@ -10,7 +10,7 @@ namespace CLIUtils
         public static bool InsertNewLineAtEndOfExecution { get; set; } = true;
         private static List<Command> Commands { get; set; } = new List<Command>();
 
-        public static void RegisterCommand(string name, string description, Action action)
+        public static void RegisterCommand(string name, string description, Action<string[]> action)
         {
             var cmd = new Command(name, description, action);
             Commands.Add(cmd);
@@ -31,15 +31,6 @@ namespace CLIUtils
 
                 var cmd = input.Split(' ');
                 var name = cmd[0];
-                var args = new List<string>();
-
-                for (var i = 0; i < cmd.Length; i++)
-                {
-                    if (i == 0)
-                        continue;
-
-                    args.Add(cmd[i]);
-                }
 
                 var cmdFound = false;
 
@@ -48,6 +39,17 @@ namespace CLIUtils
                     if (command.Name == name)
                     {
                         cmdFound = true;
+                        var args = new List<string>();
+
+                        for (var i = 0; i < cmd.Length; i++)
+                        {
+                            if (i == 0)
+                                continue;
+
+                            args.Add(cmd[i]);
+                        }
+
+                        command.Arguments = args.ToArray();
                         command.ExecuteAction();
                         break;
                     }
