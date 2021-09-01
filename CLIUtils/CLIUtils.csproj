@@ -4,16 +4,16 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <TargetFramework>netstandard2.0</TargetFramework>
     <PackageId>CLIUtils</PackageId>
-    <Description>Easily create custom CLIs for embedding console apps</Description>
-    <Version>1.0.2</Version>
+    <Description>Easily create custom CLI for console apps</Description>
+    <Version>1.0.3</Version>
     <Authors>Zakki0925224</Authors>
     <Copyright>Copyright (c) 2021 Zakki</Copyright>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <RepositoryUrl>https://github.com/Zakki0925224/CLIUtils</RepositoryUrl>
     <PackageTags>CLI Console Uitls</PackageTags>
-    <PackageReleaseNotes>Fixed package info</PackageReleaseNotes>
-    <AssemblyVersion>1.0.2.0</AssemblyVersion>
-    <FileVersion>1.0.2.0</FileVersion>
+    <PackageReleaseNotes>Fixed package description</PackageReleaseNotes>
+    <AssemblyVersion>1.0.3.0</AssemblyVersion>
+    <FileVersion>1.0.3.0</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>

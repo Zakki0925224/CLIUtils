@@ -1,5 +1,5 @@
 # CLIUtils
-Easily create custom CLIs for embedding console apps
+Easily create custom CLI for console apps
 
 ## Dependencies
 * .NET Standard 2.0
