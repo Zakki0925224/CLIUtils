@@ -8,14 +8,14 @@ namespace SampleApp
         static void Main(string[] args)
         {
             CLI.StartMessage = "Welcome!";
-            CLI.InputMarker = "$";
+            CLI.InputMarker = ">";
 
-            CLI.RegisterCommand("test", "test command", new string[]{}, () =>
+            CLI.RegisterCommand("test", "test command", () =>
             {
                 Console.WriteLine("executed!!!!!!!!");
             });
 
-            CLI.RegisterCommand("exit", "exit app", new string[]{}, () =>
+            CLI.RegisterCommand("exit", "exit app", () =>
             {
                 Environment.Exit(0);
             });

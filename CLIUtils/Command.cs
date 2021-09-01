@@ -6,14 +6,12 @@ namespace CLIUtils
     {
         public string Name { get; set; }
         public string Description { get; set; }
-        public string[] Arguments { get; set; }
         public Action Action { get; set; }
 
-        public Command(string name, string description, string[] arguments, Action action)
+        public Command(string name, string description, Action action)
         {
             this.Name = name;
             this.Description = description;
-            this.Arguments = arguments;
             this.Action = action;
         }
 

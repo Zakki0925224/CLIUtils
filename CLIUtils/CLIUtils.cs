@@ -10,9 +10,9 @@ namespace CLIUtils
         public static bool InsertNewLineAtEndOfExecution { get; set; } = true;
         private static List<Command> Commands { get; set; } = new List<Command>();
 
-        public static void RegisterCommand(string name, string description, string[] arguments, Action action)
+        public static void RegisterCommand(string name, string description, Action action)
         {
-            var cmd = new Command(name, description, arguments, action);
+            var cmd = new Command(name, description, action);
             Commands.Add(cmd);
         }
 
