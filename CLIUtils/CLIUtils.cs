@@ -7,7 +7,8 @@ namespace CLIUtils
     {
         public static string StartMessage { get; set; } = "Hello World!";
         public static string InputMarker { get; set; } = ">";
-        public static List<Command> Commands { get; set; } = new List<Command>();
+        public static bool InsertNewLineAtEndOfExecution { get; set; } = true;
+        private static List<Command> Commands { get; set; } = new List<Command>();
 
         public static void RegisterCommand(string name, string description, string[] arguments, Action action)
         {
@@ -54,6 +55,9 @@ namespace CLIUtils
 
                 if (!cmdFound)
                     Console.WriteLine($"Command \"{name}\" was not found");
+
+                if (InsertNewLineAtEndOfExecution)
+                    Console.WriteLine();
             }
         }
     }
