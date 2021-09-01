@@ -29,8 +29,8 @@ namespace CLIUtils
                     input == "")
                     continue;
 
-                var cmd = input.Split(' ');
-                var name = cmd[0];
+                var cmdParams = input.Split(' ');
+                var name = cmdParams[0];
 
                 var cmdFound = false;
 
@@ -41,16 +41,26 @@ namespace CLIUtils
                         cmdFound = true;
                         var args = new List<string>();
 
-                        for (var i = 0; i < cmd.Length; i++)
+                        for (var i = 0; i < cmdParams.Length; i++)
                         {
                             if (i == 0)
                                 continue;
 
-                            args.Add(cmd[i]);
+                            args.Add(cmdParams[i]);
                         }
 
                         command.Arguments = args.ToArray();
                         command.ExecuteAction();
+                        break;
+                    }
+
+                    if (name == "help") // reserved word
+                    {
+                        cmdFound = true;
+
+                        foreach (var cmd in Commands)
+                            Console.WriteLine($"{cmd.Name} - {cmd.Description}");
+
                         break;
                     }
                 }
