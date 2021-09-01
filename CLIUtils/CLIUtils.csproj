@@ -1,7 +1,13 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net5.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <PackageId>CLIUtils</PackageId>
+    <Description>Easily create custom CLIs for embedding console apps</Description>
+    <Version>1.0</Version>
+    <Authors>Zakki0925224</Authors>
+    <Copyright>Copyright (c) 2021 Zakki</Copyright>
   </PropertyGroup>
 
 </Project>
