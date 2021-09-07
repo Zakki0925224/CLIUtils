@@ -16,6 +16,7 @@ namespace SampleApp
             CLI.RegisterRuntimeAction((input) =>
             {
                 inputHistory.Add(input);
+                NLogService.InfoLog($"Inputted \"{input}\"");
             });
 
             CLI.RegisterCommand("test", "test command", (_) =>
