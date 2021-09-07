@@ -18,7 +18,7 @@ namespace SampleApp
                 inputHistory.Add(input);
             });
 
-            CLI.RegisterCommand("test", "test command", (args) =>
+            CLI.RegisterCommand("test", "test command", (_) =>
             {
                 Console.WriteLine("executed!!!!!!!!");
             });
@@ -29,7 +29,7 @@ namespace SampleApp
                     Console.WriteLine(arg);
             });
 
-            CLI.RegisterCommand("exit", "exit app", (args) =>
+            CLI.RegisterCommand("exit", "exit app", (_) =>
             {
                 Environment.Exit(0);
             });

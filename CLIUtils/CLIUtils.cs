@@ -69,15 +69,8 @@ namespace CLIUtils
                     if (command.Name == name)
                     {
                         cmdFound = true;
-                        var args = new List<string>();
-
-                        for (var i = 0; i < cmdParams.Length; i++)
-                        {
-                            if (i == 0)
-                                continue;
-
-                            args.Add(cmdParams[i]);
-                        }
+                        var args = new List<string>(cmdParams);
+                        args.RemoveAt(0);
 
                         command.Arguments = args.ToArray();
                         command.ExecuteAction();
