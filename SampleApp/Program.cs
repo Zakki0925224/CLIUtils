@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using CLIUtils;
 
 namespace SampleApp
@@ -7,8 +8,15 @@ namespace SampleApp
     {
         static void Main(string[] args)
         {
+            var inputHistory = new List<string>();
+
             CLI.StartMessage = "Welcome!";
             CLI.InputMarker = ">";
+
+            CLI.RegisterRuntimeAction((input) =>
+            {
+                inputHistory.Add(input);
+            });
 
             CLI.RegisterCommand("test", "test command", (args) =>
             {
