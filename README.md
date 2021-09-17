@@ -1,4 +1,8 @@
 # CLIUtils
+![lisence](https://img.shields.io/github/license/Zakki0925224/CLIUtils)
+![nuget-version](https://img.shields.io/nuget/v/CLIUtils)
+![nuget-downloads](https://img.shields.io/nuget/dt/CLIUtils)
+
 Easily create custom CLI for console apps
 
 ## Dependencies
